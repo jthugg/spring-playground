@@ -1,0 +1,5 @@
+rootProject.name = 'spring-playground'
+include 'module-discovery'
+include 'module-gateway'
+include 'modules-target:foo'
+include 'modules-target:bar'
