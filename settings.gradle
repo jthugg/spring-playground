@@ -1,0 +1,6 @@
+rootProject.name = 'spring-playground'
+include 'module-core'
+include 'module-domain'
+include 'module-external:debezium'
+include 'module-external:db'
+include 'module-application'
