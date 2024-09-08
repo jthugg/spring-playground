@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  mysql-todo:
+    image: mysql:8.0.33
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      TZ: UTC
+      MYSQL_DATABASE: test
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+    volumes:
+      - ./volume/mysql:/var/lib/mysql
