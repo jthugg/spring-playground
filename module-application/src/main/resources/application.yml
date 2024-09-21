@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:33060/test
+    username: root
+    password: test
+
+  jpa:
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+debezium:
+  db-host: localhost
+  db-port: 33060
+  db-user: root
+  db-password: test
+  table-include-list: test.TODO

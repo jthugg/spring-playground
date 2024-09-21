@@ -1,3 +1,9 @@
 bootJar.enabled = true
 
-dependencies {}
+dependencies {
+    implementation project(':module-core')
+    implementation project(':module-domain')
+    implementation project(':module-external:db')
+    implementation project(':module-presentation:http')
+    implementation project(':module-presentation:debezium')
+}
