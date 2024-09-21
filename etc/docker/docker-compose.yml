@@ -14,4 +14,4 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_0900_ai_ci
     volumes:
-      - ./volume/mysql:/var/lib/mysql
+      - ./volume/init/init.sql:/docker-entrypoint-initdb.d/init.sql
