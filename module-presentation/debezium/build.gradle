@@ -1,3 +1,9 @@
 jar.enabled = true
 
-dependencies {}
+dependencies {
+    implementation 'io.debezium:debezium-api:2.7.2.Final'
+    implementation 'io.debezium:debezium-embedded:2.7.2.Final'
+    implementation 'io.debezium:debezium-connector-mysql:2.7.2.Final'
+
+    implementation project(':module-external:db')
+}
