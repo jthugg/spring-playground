@@ -1,0 +1,18 @@
+server:
+  port: ${DISCOVERY_SERVER_PORT}
+
+spring:
+  application:
+    name: discovery-service:${spring.application.instance_id}
+    instance_id: ${DISCOVERY_SERVER_NODE_ID:${random.uuid}} # optional value
+
+eureka:
+  instance:
+    hostname: ${DISCOVERY_SERVER_HOSTNAME}
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${DISCOVERY_SERVER_PEERING_URLS}
