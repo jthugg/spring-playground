@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: discovery-service:${spring.application.instance_id}
+    name: discovery-service
     instance_id: ${DISCOVERY_SERVER_NODE_ID:${random.uuid}} # optional value
 
 eureka:
