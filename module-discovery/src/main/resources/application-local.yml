@@ -6,6 +6,19 @@ spring:
     name: discovery-service
     instance_id: ${DISCOVERY_SERVER_NODE_ID:${random.uuid}} # optional value
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+    jmx:
+      exposure:
+        include: health,metrics
+
+  endpoint:
+    health:
+      show-details: always
+
 eureka:
   instance:
     hostname: ${DISCOVERY_SERVER_HOSTNAME}
