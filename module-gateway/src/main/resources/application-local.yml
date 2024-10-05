@@ -1,0 +1,30 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: gateway-service
+    instance_id: ${GATEWAY_SERVER_NODE_ID:${random.uuid}} # optional value
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+    jmx:
+      exposure:
+        include: health,metrics
+
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  instance:
+    instance-id: ${spring.application.instance_id}
+
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${DISCOVERY_BOOTSTRAP_SERVERS}
